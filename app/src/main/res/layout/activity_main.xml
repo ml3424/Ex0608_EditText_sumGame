@@ -101,7 +101,7 @@
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/eT3"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toEndOf="@+id/eT1"
         app:layout_constraintTop_toBottomOf="@+id/tV5"
         app:layout_constraintVertical_bias="0.168" />
@@ -111,58 +111,58 @@
         android:layout_width="40dp"
         android:layout_height="45dp"
         android:layout_marginTop="75dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="12dp"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/tV4"
         app:layout_constraintVertical_bias="0.0"
-        android:autofillHints=""
         tools:ignore="LabelFor" />
 
     <ImageView
         android:id="@+id/iV1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/eT1"
-        app:layout_constraintVertical_bias="0.255"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
         android:id="@+id/iV2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/iV3"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/iV1"
         app:layout_constraintTop_toBottomOf="@+id/eT2"
-        app:layout_constraintVertical_bias="0.255"
+        app:layout_constraintVertical_bias="0.491"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <ImageView
         android:id="@+id/iV3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/eT3"
-        app:layout_constraintVertical_bias="0.255"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="168dp"
         android:layout_height="60dp"
-        android:onClick="click"
-        android:text="Button"
+        android:onClick="clickNew"
+        android:text="New"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iV2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -179,5 +179,40 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_begin="337dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="48dp"
+        android:onClick="btn1click"
+        android:text="v/x"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="148dp"
+        android:onClick="btn2click"
+        android:text="v/x"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toEndOf="@+id/button1" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="48dp"
+        android:onClick="btn3click"
+        android:text="v/x"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
