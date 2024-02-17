@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tV1, tV2, tV3, tV4, tV5, tV6;
     EditText eT1,eT2,eT3;
     ImageView iV1,iV2,iV3;
+    Button btn;
 
     Random rand = new Random();
     int rnd1 = 0, rnd2 = 0;
@@ -47,9 +49,18 @@ public class MainActivity extends AppCompatActivity {
         eT2.setVisibility(View.INVISIBLE);
         eT3.setVisibility(View.INVISIBLE);
 
+        //image views
         iV1 = findViewById(R.id.iV1);
         iV2 = findViewById(R.id.iV2);
         iV3 = findViewById(R.id.iV3);
+
+        iV1.setVisibility(View.INVISIBLE);
+        iV2.setVisibility(View.INVISIBLE);
+        iV3.setVisibility(View.INVISIBLE);
+
+
+        //button
+        btn = findViewById(R.id.btn);
 
         // random numbers
         rnd1 = rand.nextInt(90)+10;
@@ -61,4 +72,70 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void click(View view) {
+        if(eT2.getVisibility() == View.INVISIBLE)
+        {
+            st = eT1.getText().toString();
+            answer = Integer.parseInt(st);
+
+            if(answer == rnd1+rnd2)
+            {
+                iV1.setImageResource(R.drawable.vi);
+            }
+            else
+            {
+                iV1.setImageResource(R.drawable.x);
+            }
+            iV1.setVisibility(View.VISIBLE);
+
+            rnd1 += rnd2;
+            rnd2 = rand.nextInt(90)+10;
+            tV2.setText(String.valueOf(rnd1));
+            tV5.setText(String.valueOf(rnd2));
+
+            eT2.setVisibility(View.VISIBLE);
+            tV2.setVisibility(View.VISIBLE);
+            tV5.setVisibility(View.VISIBLE);
+        }
+        else if (eT3.getVisibility() == View.INVISIBLE)
+        {
+            st = eT2.getText().toString();
+            answer = Integer.parseInt(st);
+
+            if(answer == rnd1+rnd2)
+            {
+                iV2.setImageResource(R.drawable.vi);
+            }
+            else
+            {
+                iV2.setImageResource(R.drawable.x);
+            }
+            iV2.setVisibility(View.VISIBLE);
+
+            rnd1 += rnd2;
+            rnd2 = rand.nextInt(90)+10;
+            tV3.setText(String.valueOf(rnd1));
+            tV6.setText(String.valueOf(rnd2));
+
+            eT3.setVisibility(View.VISIBLE);
+            tV3.setVisibility(View.VISIBLE);
+            tV6.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            st = eT3.getText().toString();
+            answer = Integer.parseInt(st);
+
+            if(answer == rnd1+rnd2)
+            {
+                iV3.setImageResource(R.drawable.vi);
+            }
+            else
+            {
+                iV3.setImageResource(R.drawable.x);
+            }
+            iV3.setVisibility(View.VISIBLE);
+        }
+
+    }
 }
