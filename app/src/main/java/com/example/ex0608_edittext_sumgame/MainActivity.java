@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Random rand = new Random();
     int rnd1 = 0, rnd2 = 0;
     String st;
-    int answer;
+    int answer = 0, counterRight = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +78,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void clickNew(View view) {
+        counterRight = 0;
+        btn.setText("New");
+
+        tV2.setVisibility(View.INVISIBLE);
+        tV3.setVisibility(View.INVISIBLE);
+        tV5.setVisibility(View.INVISIBLE);
+        tV6.setVisibility(View.INVISIBLE);
+
+        eT2.setVisibility(View.INVISIBLE);
+        eT3.setVisibility(View.INVISIBLE);
+
+        button2.setVisibility(View.INVISIBLE);
+        button3.setVisibility(View.INVISIBLE);
+
+        iV1.setVisibility(View.INVISIBLE);
+        iV2.setVisibility(View.INVISIBLE);
+        iV3.setVisibility(View.INVISIBLE);
+
+        eT1.getText().clear();
+        eT2.getText().clear();
+        eT3.getText().clear();
+
+        rnd1 = rand.nextInt(90)+10;
+        rnd2 = rand.nextInt(90)+10;
+        tV1.setText(String.valueOf(rnd1));
+        tV4.setText(String.valueOf(rnd2));
     }
 
     public void btn1click(View view) {
@@ -89,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
             if(answer == rnd1+rnd2)
             {
                 iV1.setImageResource(R.drawable.vi);
+                counterRight++;
             }
             else
             {
@@ -117,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             if(answer == rnd1+rnd2)
             {
                 iV2.setImageResource(R.drawable.vi);
+                counterRight++;
             }
             else
             {
@@ -143,11 +171,15 @@ public class MainActivity extends AppCompatActivity {
         if(answer == rnd1+rnd2)
         {
             iV3.setImageResource(R.drawable.vi);
+            counterRight++;
         }
         else
         {
             iV3.setImageResource(R.drawable.x);
         }
         iV3.setVisibility(View.VISIBLE);
+
+
+        btn.setText(counterRight + "/3 ," + (int)(33.36*counterRight) + "%");
     }
 }
